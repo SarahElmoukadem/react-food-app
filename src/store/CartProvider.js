@@ -32,6 +32,14 @@ if(action.type === 'ADD_ITEM') {
          updatedItems = state.items.concat(action.item)
     }
 
+    return{
+            
+        items: updatedItems,
+        totalAmount: updatedTotalAmount
+    
+    }
+    
+}
    if (action.type === 'REMOVE_ITEM'){
 
        const cartItemExist = state.items.findIndex(
@@ -52,13 +60,13 @@ if(action.type === 'ADD_ITEM') {
             updatedItems[existingItem] = updatedItem
         }
         
-}
-    return{
-
-        items: updatedItems,
-        totalAmount: updatedTotalAmount
-
-    }
+      
+        return{
+            
+            items: updatedItems,
+            totalAmount: updatedTotalAmount
+        
+        }
 }
 
 return defaultCartState;
